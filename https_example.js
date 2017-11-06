@@ -8,6 +8,10 @@ var options = {
 
 var callback = function(response) {
   console.log("In reponse handler callback!");
+  response.on('data', function(chunk) {
+    console.log('[-- CHUNK OF LENGTH ' + chunk.length + ' --');
+    console.log(chunk.toString());
+  });
   console.log('Response: ', response);
 }
 
